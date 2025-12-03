@@ -1,4 +1,4 @@
-import ContactPage from "./ContactPage";
+import ContactPage from "@/app/contact/ContactPage";
 
 export default function Contact() {
     return (

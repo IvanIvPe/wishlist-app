@@ -12,15 +12,15 @@ const Navbar: React.FC = () => {
             alt="App Logo" 
             className={styles.logoImage} 
         />
-        <span className={styles.logoText}>List App</span>
+        <span className={styles.logoText}>Wishlist App</span>
       </Link>
 
       <ul className={styles.navList}>
         <li className={styles.navItem}>
-          <Link href="/about" className={styles.navLink}>About</Link>
+          <Link href="/wishlist" className={styles.navLink}>Wishlist</Link>
         </li>
         <li className={styles.navItem}>
-          <Link href="/wishlist" className={styles.navLink}>Wishlist</Link>
+          <Link href="/about" className={styles.navLink}>About</Link>
         </li>
         <li className={styles.navItem}>
           <Link href="/contact" className={styles.navLink}>Contact</Link>
