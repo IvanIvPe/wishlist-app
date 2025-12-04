@@ -2,6 +2,7 @@
 
 import styles from '@/app/wishlist/WishlistPage.module.css'
 import React, { useState, useEffect } from 'react'
+import toast from 'react-hot-toast';
 
 interface Wish {
     id: number;
@@ -46,13 +47,13 @@ export default function Wishlist() {
         const updatedWishes = wishes.filter(wish => wish.id !== id);
         setWishes(updatedWishes);
     };
- 
-    {/*const handleEditWish = (id: number, newName: string) => {
+
+    const handleEditWish = (id: number, newName: string) => {
         const updatedWishes = wishes.map(wish =>
             wish.id === id ? { ...wish, name: newName } : wish
         );
         setWishes(updatedWishes);
-    };*/}
+    };
 
     const handleToggleComplete = (id: number) => {
         const updatedWishes = wishes.map(wish =>
@@ -99,12 +100,25 @@ export default function Wishlist() {
                                 {wish.name}
                             </span>
                         </div>
+                                                <button
+                            onClick={() => {
+                                const newName = prompt('Enter new wish name:', wish.name);
+                                if (newName !== null && newName.trim() !== '') {
+                                    toast.success('Wish updated successfully!');
+                                    handleEditWish(wish.id, newName.trim());
+                                }
+                            }}
+                            className={styles.editButton}
+                        >
+                            Edit
+                        </button>
                         <button
                             onClick={() => handleDeleteWish(wish.id)}
                             className={styles.deleteButton}
                         >
                             x
                         </button>
+
                     </li>
                 ))}
             </ul>
