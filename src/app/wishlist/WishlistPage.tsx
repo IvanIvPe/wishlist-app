@@ -3,6 +3,8 @@
 import styles from '@/app/wishlist/WishlistPage.module.css'
 import React, { useState, useEffect } from 'react'
 import toast from 'react-hot-toast';
+import ConfirmDeleteToast from '@/app/components/Toast/ConfirmDeleteToast';
+import EditWishToast from '@/app/components/Toast/EditWishToast';
 
 interface Wish {
     id: number;
@@ -40,12 +42,25 @@ export default function Wishlist() {
             };
             setWishes([...wishes, newWish]);
             setInputValue('');
+            toast.success('Wish added successfully!');
         }
     };
 
     const handleDeleteWish = (id: number) => {
-        const updatedWishes = wishes.filter(wish => wish.id !== id);
-        setWishes(updatedWishes);
+        toast.dismiss();
+        toast((t) => (
+            <ConfirmDeleteToast
+                t={t}
+                message="Delete this wish?"
+                onConfirm={() => {
+                    setWishes((prev) => prev.filter(wish => wish.id !== id));
+                    toast.success('Wish deleted');
+                }}
+            />
+        ), {
+            duration: 5000,
+            style: { minWidth: '300px' }
+        });
     };
 
     const handleEditWish = (id: number, newName: string) => {
@@ -53,6 +68,7 @@ export default function Wishlist() {
             wish.id === id ? { ...wish, name: newName } : wish
         );
         setWishes(updatedWishes);
+        toast.success('Wish updated successfully!');
     };
 
     const handleToggleComplete = (id: number) => {
@@ -60,6 +76,7 @@ export default function Wishlist() {
             wish.id === id ? { ...wish, completed: !wish.completed } : wish
         );
         setWishes(updatedWishes);
+        toast.success('Wish status updated');
     };
 
     if (!isLoaded) return null;
@@ -100,25 +117,32 @@ export default function Wishlist() {
                                 {wish.name}
                             </span>
                         </div>
-                                                <button
+
+                        <button
                             onClick={() => {
-                                const newName = prompt('Enter new wish name:', wish.name);
-                                if (newName !== null && newName.trim() !== '') {
-                                    toast.success('Wish updated successfully!');
-                                    handleEditWish(wish.id, newName.trim());
-                                }
+                                toast.dismiss();
+                                toast((t) => (
+                                    <EditWishToast
+                                        t={t}
+                                        initialName={wish.name}
+                                        onSave={(newName) => handleEditWish(wish.id, newName)}
+                                    />
+                                ), {
+                                    id: 'edit-toast',
+                                    duration: Infinity,
+                                });
                             }}
                             className={styles.editButton}
                         >
                             Edit
                         </button>
+
                         <button
                             onClick={() => handleDeleteWish(wish.id)}
                             className={styles.deleteButton}
                         >
                             x
                         </button>
-
                     </li>
                 ))}
             </ul>
