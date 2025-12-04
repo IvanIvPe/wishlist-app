@@ -101,3 +101,13 @@
 .deleteButton:active {
     transform: scale(0.95);
 }
+
+
+.emptyMessage {
+  text-align: center;
+  color: #888;
+  padding: 2.5rem;
+  border: 2.5px dashed #e5e7eb;
+  border-radius: 8px;
+  margin-top: 1rem;
+}

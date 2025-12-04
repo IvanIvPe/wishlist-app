@@ -14,9 +14,11 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Navbar />
-        {children}
+        <main style={{ flex: 10 }}>
+          {children}
+        </main>
         <Footer />
-        </body>
+      </body>
     </html>
   );
 } 
