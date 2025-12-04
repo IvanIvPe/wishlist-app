@@ -1,0 +1,9 @@
+.toastContainer {
+  bottom: 140px !important;
+}
+
+.toastPopup {
+  background: #333;
+  color: #fff;
+  font-size: 18px;
+}

@@ -1,7 +1,8 @@
 import React from 'react'
-import './globals.css'
-import Navbar from './components/Navbar/Navbar'
-import Footer from './components/Footer/Footer'
+import '@/app/globals.css'
+import Navbar from '@/app/components/Navbar/Navbar'
+import Footer from '@/app/components/Footer/Footer'
+import ToastProvider from '@/app/components/Toast/Toast'
 
 
 
@@ -18,6 +19,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <ToastProvider />
       </body>
     </html>
   );
