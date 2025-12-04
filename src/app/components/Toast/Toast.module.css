@@ -2,8 +2,120 @@
   bottom: 140px !important;
 }
 
+
 .toastPopup {
-  background: #333;
-  color: #fff;
-  font-size: 18px;
+  background: #fff;
+  color: #333;
+  font-size: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  max-width: 90vw;
+}
+
+
+.confirmContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: space-between;
+  min-width: 280px;
+}
+
+.confirmText {
+  font-weight: 500;
+  color: #333;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 8px;
+}
+
+
+.toastDeleteBtn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.toastDeleteBtn:hover {
+  background-color: #c82333;
+}
+
+.toastCancelBtn {
+  background-color: #e9ecef;
+  color: #333;
+  border: 1px solid #ced4da;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.toastCancelBtn:hover {
+  background-color: #dee2e6;
+  border-color: #adb5bd;
+  color: #000;
+}
+
+.toastCancelBtn:active {
+  background-color: #ced4da;
+  transform: scale(0.97);
+}
+
+
+.editContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 300px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+}
+
+.toastInput {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+  color: #333;
+  background-color: #fff;
+  outline: none;
+  
+
+  box-sizing: border-box; 
+}
+
+.toastInput:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.2);
+}
+
+
+.toastSaveBtn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.toastSaveBtn:hover {
+  background-color: #218838;
 }
