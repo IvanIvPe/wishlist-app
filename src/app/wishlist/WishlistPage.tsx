@@ -1,8 +1,7 @@
 "use client"
 
 import styles from '@/app/wishlist/WishlistPage.module.css'
-import { useState } from 'react';
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
 interface Wish {
     id: number;
@@ -16,7 +15,6 @@ export default function Wishlist() {
     const [inputValue, setInputValue] = useState('');
     const [isLoaded, setIsLoaded] = useState(false);
 
-
     useEffect(() => {
         const saved = localStorage.getItem('wishes');
         if (saved) {
@@ -26,9 +24,10 @@ export default function Wishlist() {
     }, []);
 
     useEffect(() => {
-        localStorage.setItem('wishes', JSON.stringify(wishes));
-    }, [wishes]);
-
+        if (isLoaded) {
+            localStorage.setItem('wishes', JSON.stringify(wishes));
+        }
+    }, [wishes, isLoaded]);
 
     const handleAddWish = () => {
         if (inputValue.trim() !== '') {
@@ -43,18 +42,17 @@ export default function Wishlist() {
         }
     };
 
-
     const handleDeleteWish = (id: number) => {
         const updatedWishes = wishes.filter(wish => wish.id !== id);
         setWishes(updatedWishes);
     };
-
-    const handleEditWish = (id: number, newName: string) => {
+ 
+    {/*const handleEditWish = (id: number, newName: string) => {
         const updatedWishes = wishes.map(wish =>
             wish.id === id ? { ...wish, name: newName } : wish
         );
         setWishes(updatedWishes);
-    };
+    };*/}
 
     const handleToggleComplete = (id: number) => {
         const updatedWishes = wishes.map(wish =>
@@ -62,6 +60,8 @@ export default function Wishlist() {
         );
         setWishes(updatedWishes);
     };
+
+    if (!isLoaded) return null;
 
     return (
         <div className={styles.container}>
@@ -80,6 +80,12 @@ export default function Wishlist() {
                 </button>
             </div>
             <ul className={styles.wishList}>
+                {wishes.length === 0 && (
+                    <div className={styles.emptyMessage}>
+                        <p>Your wishlist is empty</p>
+                        <p>Add something to start your Wishlist!</p>
+                    </div>
+                )}
                 {wishes.map((wish) => (
                     <li key={wish.id} className={styles.wishItem}>
                         <div className={styles.wishContent}>
@@ -105,4 +111,3 @@ export default function Wishlist() {
         </div>
     );
 }
-

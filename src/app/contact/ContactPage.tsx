@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from '@/app/contact/ContactPage.module.css'
+import MapComponent from '@/app/components/Map/Map'
 
 const ContactPage: React.FC = () => {
     return (
@@ -8,10 +9,11 @@ const ContactPage: React.FC = () => {
             <p className={styles.description}>We'd love to hear from you! Please fill out the form below or reach out directly.</p>
 
             <div className={styles.contactInfo}>
-                <p><strong>Email:</strong> contact@wishlist.com</p>
+                <p><strong>Email:</strong> ivan@contact.com</p>
                 <p><strong>Phone:</strong> +381 (123) 456-7890</p>
-                <p><strong>Address:</strong> 123 Test adress, Belgrade, Serbia</p>
+                <p><strong>Address:</strong> 123 Test adress, Niš, Serbia</p>
                 <p><strong>Office Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM </p>
+                <MapComponent />
             </div>
 
             <h2 className={styles.subtitle}>Send us a message</h2>
