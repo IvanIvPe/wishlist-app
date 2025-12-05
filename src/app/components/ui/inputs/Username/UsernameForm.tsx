@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react'
-import styles from '@/app/components/ui/inputs/Username/UsernameForm.module.css'
+import styles from '@/app/components/ui/inputs/InputGroup.module.css'
 
 
 const UsernameForm: React.FC = () => {

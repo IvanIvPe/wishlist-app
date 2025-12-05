@@ -1,9 +1,9 @@
 .container {
   width: 100vw;
-  height: 100vh; /* Fixed height, not min-height */
-  overflow: hidden; /* Prevents scrolling */
+  height: 100vh;
+  overflow: hidden;
   
-  display: flex; /* Helps center the content */
+  display: flex;
   flex-direction: column;
   
   --color: #E1E1E1;
@@ -15,11 +15,10 @@
 
 .main {
   width: 100%;
-  height: 100%; /* Fill the container */
+  height: 100%;
   padding: 40px;
   box-sizing: border-box;
   
-  /* Centers the text/content right in the middle of the screen */
   display: flex;
   flex-direction: column;
   align-items: center; 
@@ -30,12 +29,11 @@
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
-  background: rgba(255, 255, 255, 0.8); /* Optional: makes text readable over grid */
+  background: rgba(255, 255, 255, 0.8);
   padding: 20px;
   border-radius: 12px;
 }
 
-/* If you have content inside .center, this handles it */
 .center {
   display: flex;
   justify-content: center;

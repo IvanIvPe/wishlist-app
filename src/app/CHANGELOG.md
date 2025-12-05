@@ -14,4 +14,4 @@ All notable changes to this project will be documented in this file.
 - Background styling for Home page (`page.module.css`)
 
 ### Fixed
-- 
+- CSS module refactoring for Input components (`InputGroup.module.css`)

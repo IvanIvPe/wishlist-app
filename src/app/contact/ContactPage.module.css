@@ -53,10 +53,6 @@
     font-family: inherit;
 }
 
-.textarea:focus {
-    outline: none;
-    border-color: #4CAF50;
-}
 
 .textarea {
     resize: vertical;
