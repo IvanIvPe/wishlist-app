@@ -7,7 +7,7 @@ import styles from '@/app/components/ui/inputs/InputGroup.module.css'
 const UsernameForm: React.FC = () => {
     return (
         <div className={styles.inputGroup}>
-            <input type="text" id="username" required />
+            <input type="text" id="username" name="username" required />
             <label htmlFor="username">
                 <span style={{ transitionDelay: '0ms' }}>U</span>
                 <span style={{ transitionDelay: '50ms' }}>s</span>

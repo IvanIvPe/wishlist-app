@@ -7,7 +7,7 @@ import styles from '@/app/components/ui/inputs/InputGroup.module.css'
 const MessageForm: React.FC = () => {
     return (
         <div className={styles.inputGroup}>
-            <textarea id="message" rows={5} required></textarea>
+            <textarea id="message" name="message" rows={5} required></textarea>
             <label htmlFor="message">
                 <span style={{ transitionDelay: '0ms' }}>M</span>
                 <span style={{ transitionDelay: '50ms' }}>e</span>

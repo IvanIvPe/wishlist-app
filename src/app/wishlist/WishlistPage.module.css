@@ -1,173 +1,384 @@
+.pageBackground {
+  padding: 32px 16px 40px;
+  background: linear-gradient(to bottom, #f3f4f6, #e5e7eb);
+}
+
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px 32px;
+  background-color: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.08);
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
 }
 
 .title {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+.listSelectorWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.listSelectorLabel {
+  font-size: 0.85rem;
+  color: #4b5563;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.listSelector {
+  min-width: 180px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 0.9rem;
+}
+
+.addListButton {
+  padding: 6px 12px;
+  border-radius: 9999px;
+  border: 1px solid #0f766e;
+  background-color: #14b8a6;
+  color: #ecfdf5;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.addListButton:hover {
+  background-color: #0f766e;
+  border-color: #0f766e;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px rgba(15, 118, 110, 0.3);
 }
 
 .inputContainer {
-    margin-bottom: 2rem;
-    display: flex;
-    gap: 10px;
+  margin-bottom: 20px;
+  padding: 16px 16px 20px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
 }
 
-.input {
-    flex: 1;
-    padding: 8px 12px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.fieldGroup {
+  margin-bottom: 12px;
+}
+
+.fieldRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.fieldGroupInline {
+  flex: 1 1 220px;
+}
+
+.fieldGroupInlineSmall {
+  flex: 0 0 140px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+.input,
+.select {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.input:focus,
+.select:focus {
+  border-color: #4ade80;
+  box-shadow: 0 0 0 1px #4ade80;
+}
+
+.errorText {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: #dc2626;
 }
 
 .addButton {
-    padding: 8px 16px;
-    background-color: #fff;
-    border: 1px solid #000;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
+  padding: 10px 18px;
+  border-radius: 9999px;
+  border: none;
+  background-color: #14b8a6;
+  color: #ecfdf5;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .addButton:hover {
-    background-color: #f0f0f0;
+  background-color: #0f766e;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px rgba(20, 184, 166, 0.35);
+}
+
+.controlsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filterChip {
+  padding: 6px 12px;
+  border-radius: 9999px;
+  border: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  font-size: 0.8rem;
+  color: #4b5563;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.filterChipActive {
+  background-color: #111827;
+  color: #f9fafb;
+  border-color: #111827;
+}
+
+.sortWrapper {
+  font-size: 0.85rem;
 }
 
 .wishList {
-    list-style: none;
-    padding: 0;
-    margin: 2rem 0;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
 }
 
 .wishItem {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 0;
-    border-bottom: 2.5px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid #e5e7eb;
+  gap: 12px;
+  animation: fadeInUp 0.18s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .wishContent {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  flex: 1;
 }
 
 .checkbox {
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  margin-top: 2px;
 }
 
-.wishContent span {
-    font-size: 16px;
+.wishMain {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wishTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wishTitleRow span {
+  font-size: 1rem;
 }
 
 .completed {
-    text-decoration: line-through;
-    color: #888;
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.priorityBadge {
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  text-transform: capitalize;
+}
+
+.priority_low {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+.priority_medium {
+  background-color: #fef9c3;
+  color: #b45309;
+}
+
+.priority_high {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.wishLink {
+  font-size: 0.85rem;
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.wishLink:hover {
+  color: #1d4ed8;
+}
+
+.wishPrice {
+  font-size: 0.85rem;
+  color: #16a34a;
+}
+
+.editButton,
+.deleteButton {
+  background-color: #ffffff;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+  border-radius: 9999px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.editButton:hover,
+.deleteButton:hover {
+  background-color: #f3f4f6;
+  border-color: #cbd5f5;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(15, 23, 42, 0.12);
 }
 
 .deleteButton {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 0;
-    cursor: pointer;
-    margin-left: 16px;
-    font-size: 16px;
-    font-weight: bold;
-    min-width: 36px;
-    min-height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    flex-shrink: 0;
+  color: #b91c1c;
 }
-
-.deleteButton:hover {
-    background-color: #c82333;
-    transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.deleteButton:active {
-    transform: scale(0.95);
-}
-
 
 .emptyMessage {
   text-align: center;
-  color: #888;
-  padding: 2.5rem;
-  border: 2.5px dashed #e5e7eb;
-  border-radius: 8px;
-  margin-top: 1rem;
+  color: #6b7280;
+  padding: 2.25rem;
+  border: 2px dashed #bae6fd;
+  border-radius: 16px;
+  margin-top: 0.75rem;
+  background-color: #f0f9ff;
 }
 
-.editButton {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 0;
-    cursor: pointer;
-    margin-left: 16px;
-    font-size: 16px;
-    font-weight: bold;
-    min-width: 36px;
-    min-height: 36px;
-    display: flex;
-    align-items: center;
+@media (max-width: 640px) {
+  .pageBackground {
+    padding: 20px 12px 28px;
+  }
+
+  .container {
+    padding: 20px 14px 24px;
+    border-radius: 14px;
+  }
+
+  .headerRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .listSelectorWrapper {
+    align-items: flex-start;
+  }
+
+  .controlsRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .addButton {
+    width: 100%;
     justify-content: center;
-    transition: all 0.2s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    flex-shrink: 0;
+  }
 }
 
-.editButton:hover {
-    background-color: #218838;
-    transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+html[data-theme="dark"] .pageBackground {
+  background: radial-gradient(circle at top, #020617, #020617);
 }
 
-.editButton:active {
-    transform: scale(0.95);
+html[data-theme="dark"] .container {
+  background-color: #020617;
+  border-color: #1f2937;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.85);
 }
 
-.deleteButton {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 0;
-    cursor: pointer;
-    margin-left: 24px;
-    font-size: 16px;
-    font-weight: bold;
-    min-width: 36px;
-    min-height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    flex-shrink: 0;
+html[data-theme="dark"] .subtitle {
+  color: #9ca3af;
 }
 
-.deleteButton:hover {
-    background-color: #c82333;
-    transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+html[data-theme="dark"] .filters .filterChip {
+  border-color: #1f2937;
+  background-color: #020617;
+  color: #e5e7eb;
 }
 
-.deleteButton:active {
-    transform: scale(0.95);
+html[data-theme="dark"] .filterChipActive {
+  background-color: #14b8a6;
+  color: #0f172a;
+  border-color: #14b8a6;
+}
+
+html[data-theme="dark"] .wishItem {
+  border-bottom-color: #1f2937;
+}
+
+html[data-theme="dark"] .emptyMessage {
+  border-color: #1f2937;
+  background-color: #020617;
+  color: #9ca3af;
 }

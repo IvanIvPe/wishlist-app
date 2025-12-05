@@ -1,4 +1,7 @@
+"use client";
+
 import React from 'react'
+import toast from 'react-hot-toast';
 import styles from '@/app/contact/ContactPage.module.css'
 import MapComponent from '@/app/components/Map/Map'
 import UsernameForm from '@/app/components/ui/inputs/Username/UsernameForm'
@@ -8,6 +11,29 @@ import SendMessage from '@/app/components/ui/buttons/SendMessage/SendMessage'
 
 
 const ContactPage: React.FC = () => {
+    const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
+        event.preventDefault();
+
+        const form = event.currentTarget;
+        const data = new FormData(form);
+        const username = (data.get('username') ?? '').toString().trim();
+        const email = (data.get('email') ?? '').toString().trim();
+        const message = (data.get('message') ?? '').toString().trim();
+
+        const errors: string[] = [];
+        if (!username) errors.push('Name is required');
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.push('Valid email is required');
+        if (!message || message.length < 10) errors.push('Message should be at least 10 characters');
+
+        if (errors.length > 0) {
+            toast.error(errors[0]);
+            return;
+        }
+
+        toast.success('Message sent (demo only)');
+        form.reset();
+    };
+
     return (
         <div className={styles.container}>
             <h1 className={styles.title}>Contact Us</h1>
@@ -22,7 +48,7 @@ const ContactPage: React.FC = () => {
             </div>
 
             <h2 className={styles.subtitle}>Send us a message</h2>
-            <form className={styles.contactForm}>
+            <form className={styles.contactForm} onSubmit={handleSubmit}>
                 <UsernameForm />
                 <EmailForm />
                 <MessageForm />

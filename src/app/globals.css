@@ -1,3 +1,14 @@
+:root {
+    --bg: #f9fafb;
+    --bg-subtle: #f3f4f6;
+    --bg-elevated: #ffffff;
+    --text-primary: #0f172a;
+    --text-secondary: #4b5563;
+    --border-subtle: #e5e7eb;
+    --accent: #14b8a6;
+    --accent-strong: #0f766e;
+}
+
 html,
 body {
     height: 100%;
@@ -9,4 +20,22 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: var(--bg);
+    color: var(--text-primary);
+}
+
+html[data-theme="dark"] {
+    --bg: #020617;
+    --bg-subtle: #020617;
+    --bg-elevated: #020617;
+    --text-primary: #e5e7eb;
+    --text-secondary: #9ca3af;
+    --border-subtle: #1f2937;
+    --accent: #14b8a6;
+    --accent-strong: #0f766e;
+}
+
+html[data-theme="dark"] body {
+    background-color: var(--bg);
+    color: var(--text-primary);
 }

@@ -6,31 +6,32 @@
 
 .title {
     font-size: 2.5rem;
-    color: #333;
+    color: #111827;
     margin-bottom: 1rem;
 }
 
 .description {
-    font-size: 1.1rem;
-    color: #666;
+    font-size: 1.05rem;
+    color: #4b5563;
     margin-bottom: 2rem;
 }
 
 .contactInfo {
-    background-color: #f5f5f5;
+    background-color: #f3f4f6;
     padding: 1.5rem;
-    border-radius: 8px;
+    border-radius: 12px;
     margin-bottom: 2rem;
+    border: 1px solid #e5e7eb;
 }
 
 .contactInfo p {
     margin: 0.5rem 0;
-    color: #555;
+    color: #374151;
 }
 
 .subtitle {
     font-size: 1.8rem;
-    color: #333;
+    color: #111827;
     margin-bottom: 1.5rem;
 }
 
@@ -47,29 +48,67 @@
 
 .textarea {
     padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
     font-size: 1rem;
     font-family: inherit;
 }
-
 
 .textarea {
     resize: vertical;
 }
 
 .submitButton {
-    background-color: #4CAF50;
-    color: white;
-    padding: 1rem 2rem;
+    background-color: #14b8a6;
+    color: #ecfdf5;
+    padding: 0.9rem 1.8rem;
     border: none;
-    border-radius: 4px;
-    font-size: 1rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .submitButton:hover {
-    background-color: #45a049;
+    background-color: #0f766e;
+    box-shadow: 0 10px 22px rgba(15, 118, 110, 0.35);
+    transform: translateY(-1px);
+}
+
+html[data-theme="dark"] .title {
+    color: #e5e7eb;
+}
+
+html[data-theme="dark"] .description {
+    color: #9ca3af;
+}
+
+html[data-theme="dark"] .contactInfo {
+    background-color: #020617;
+    border-color: #1f2937;
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.8);
+}
+
+html[data-theme="dark"] .contactInfo p {
+    color: #e5e7eb;
+}
+
+html[data-theme="dark"] .subtitle {
+    color: #e5e7eb;
+}
+
+html[data-theme="dark"] .textarea {
+    border-color: #1f2937;
+    background-color: #020617;
+    color: #e5e7eb;
+}
+
+html[data-theme="dark"] .submitButton {
+    background-color: #14b8a6;
+    color: #0f172a;
+}
+
+html[data-theme="dark"] .submitButton:hover {
+    background-color: #22c1b4;
 }
