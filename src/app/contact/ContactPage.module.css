@@ -45,13 +45,6 @@
     flex-direction: column;
 }
 
-.label {
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: #333;
-}
-
-.input,
 .textarea {
     padding: 0.75rem;
     border: 1px solid #ddd;
@@ -60,7 +53,6 @@
     font-family: inherit;
 }
 
-.input:focus,
 .textarea:focus {
     outline: none;
     border-color: #4CAF50;

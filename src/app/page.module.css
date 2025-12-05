@@ -1,11 +1,44 @@
+.container {
+  width: 100vw;
+  height: 100vh; /* Fixed height, not min-height */
+  overflow: hidden; /* Prevents scrolling */
+  
+  display: flex; /* Helps center the content */
+  flex-direction: column;
+  
+  --color: #E1E1E1;
+  background-color: #F3F3F3;
+  background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent);
+  background-size: 55px 55px;
+}
+
 .main {
-    padding: 40px;
-    background-color: #ffffff;
-    min-height: 100vh;
+  width: 100%;
+  height: 100%; /* Fill the container */
+  padding: 40px;
+  box-sizing: border-box;
+  
+  /* Centers the text/content right in the middle of the screen */
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
 }
 
 .description {
-    text-align: center;
-    margin-top: 60px;
-    margin-bottom: 40px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.8); /* Optional: makes text readable over grid */
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* If you have content inside .center, this handles it */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
