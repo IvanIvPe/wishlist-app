@@ -1,6 +1,11 @@
 import React from 'react'
 import styles from '@/app/contact/ContactPage.module.css'
 import MapComponent from '@/app/components/Map/Map'
+import UsernameForm from '@/app/components/ui/inputs/Username/UsernameForm'
+import EmailForm from '@/app/components/ui/inputs/Email/EmailForm'
+import MessageForm from '@/app/components/ui/inputs/Message/MessageForm'
+import SendMessage from '@/app/components/ui/buttons/SendMessage/SendMessage'
+
 
 const ContactPage: React.FC = () => {
     return (
@@ -18,19 +23,10 @@ const ContactPage: React.FC = () => {
 
             <h2 className={styles.subtitle}>Send us a message</h2>
             <form className={styles.contactForm}>
-                <div className={styles.formGroup}>
-                    <label htmlFor="name" className={styles.label}>Name:</label>
-                    <input type="text" id="name" name="name" className={styles.input} required />
-                </div>
-                <div className={styles.formGroup}>
-                    <label htmlFor="email" className={styles.label}>Email:</label>
-                    <input type="email" id="email" name="email" className={styles.input} required />
-                </div>
-                <div className={styles.formGroup}>
-                    <label htmlFor="message" className={styles.label}>Message:</label>
-                    <textarea id="message" name="message" rows={5} className={styles.textarea} required></textarea>
-                </div>
-                <button type="submit" className={styles.submitButton}>Send Message</button>
+                <UsernameForm />
+                <EmailForm />
+                <MessageForm />
+                <SendMessage />
             </form>
         </div>
     )

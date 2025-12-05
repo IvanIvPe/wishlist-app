@@ -1,0 +1,53 @@
+.inputGroup {
+    position: relative;
+    margin: 20px 0 40px;
+    width: 100%;
+}
+
+.inputGroup input,
+.inputGroup textarea {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px #ccc solid;
+    display: block;
+    width: 100%;
+    padding: 20px 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.inputGroup textarea {
+    resize: vertical;
+    font-family: inherit;
+}
+
+.inputGroup input:focus,
+.inputGroup input:valid,
+.inputGroup textarea:focus,
+.inputGroup textarea:valid {
+    outline: 0;
+    border-bottom-color: #4CAF50;
+}
+
+.inputGroup label {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    pointer-events: none;
+}
+
+.inputGroup label span {
+    display: inline-block;
+    font-size: 20px;
+    min-width: 5px;
+    color: #666;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.inputGroup input:focus+label span,
+.inputGroup input:valid+label span,
+.inputGroup textarea:focus+label span,
+.inputGroup textarea:valid+label span {
+    color: #4CAF50;
+    transform: translateY(-35px);
+}
