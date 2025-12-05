@@ -7,7 +7,7 @@ import styles from '@/app/components/ui/inputs/Email/EmailForm.module.css'
 const EmailForm: React.FC = () => {
     return (
         <div className={styles.inputGroup}>
-            <input type="email" id="email" required />
+            <input type="email" id="email" name="email" required />
             <label htmlFor="email">
                 <span style={{ transitionDelay: '0ms' }}>E</span>
                 <span style={{ transitionDelay: '50ms' }}>m</span>
