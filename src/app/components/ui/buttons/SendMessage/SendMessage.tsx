@@ -5,7 +5,7 @@ import styles from '@/app/components/ui/buttons/SendMessage/SendMessage.module.c
 
 const SendMessage: React.FC = () => {
     return (
-        <button className={styles.button}>
+        <button type="submit" className={styles.button}>
             <div className={styles.outline}></div>
             <div className={`${styles.state} ${styles['state--default']}`}>
                 <div className={styles.icon}>
